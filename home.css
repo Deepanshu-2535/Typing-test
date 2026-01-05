@@ -1,0 +1,146 @@
+@font-face {
+	font-family: "sora"; /* You give it a name here */
+	src: url("./assets/fonts/Sora/Sora-VariableFont_wght.ttf") format("truetype"); /* Best format */
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap; /* Improves loading performance */
+}
+body {
+	background-color: black;
+	padding: 0px 112px;
+}
+.Navbar {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 32px;
+}
+.Titles {
+	font-family: "sora";
+	color: rgb(148, 148, 151);
+	font-weight: 100;
+	margin-right: 5px;
+	font-size: 20px;
+}
+#personal-best-div {
+	display: flex;
+	align-items: center;
+}
+.content {
+	font-family: "sora";
+	color: white;
+}
+.main {
+	margin: 64px 0px;
+}
+#text {
+	margin-bottom: 64px;
+}
+#header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#stats {
+	display: flex;
+	align-items: center;
+}
+.divider {
+	width: 1px;
+	height: 24px; /* Height of the line */
+	background-color: rgb(85, 83, 83);
+	margin: 0 20px; /* Spacing around the line */
+}
+.accuracy {
+	color: rgb(214, 77, 91);
+	font-family: "sora";
+	font-weight: bold;
+	font-size: 24px;
+}
+.controls {
+	display: flex;
+	align-items: center;
+}
+input[type="radio"] {
+	opacity: 0;
+	height: 0;
+	width: 0;
+	position: absolute;
+}
+.label {
+	color: rgb(243, 238, 238);
+	font-family: "sora";
+	border: 1px solid rgb(125, 121, 121);
+	border-radius: 8px;
+	padding: 6px 10px;
+	width: 55px;
+	height: 31px;
+}
+.label:hover {
+	cursor: pointer;
+	color: rgb(76, 166, 255);
+	border-color: rgb(76, 166, 255);
+}
+input[type="radio"]:checked + label {
+	cursor: pointer;
+	color: rgb(76, 166, 255);
+	border-color: rgb(76, 166, 255);
+}
+#text {
+	margin-top: 32px;
+	font-family: "sora";
+	font-size: 40px;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+.char {
+	color: grey;
+}
+.char.correct {
+	color: green;
+}
+.char.incorrect {
+	color: rgb(214, 77, 91);
+	text-decoration: underline solid rgb(214, 77, 91);
+}
+.char.active {
+	background-color: rgb(47, 47, 47);
+	color: grey;
+	border-radius: 8px;
+}
+.time {
+	font-family: "sora";
+	font-weight: bold;
+	color: yellow;
+	font-size: 24px;
+}
+#wpm {
+	font-family: "sora";
+	font-weight: bold;
+	font-size: 24px;
+	color: white;
+}
+.button {
+	width: 181px;
+	height: 56px;
+	padding: 10px 16px;
+	background-color: rgb(38, 38, 38);
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	border-radius: 12px;
+}
+.button:hover {
+	cursor: pointer;
+}
+#button-text {
+	font-family: "sora";
+	font-size: 20px;
+	margin-right: 5px;
+}
+#action {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
