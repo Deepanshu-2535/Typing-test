@@ -1,12 +1,12 @@
 @font-face {
-	font-family: "sora"; /* You give it a name here */
+	font-family: "sora";
 	src: url("./assets/fonts/Sora/Sora-VariableFont_wght.ttf") format("truetype"); /* Best format */
 	font-weight: normal;
 	font-style: normal;
-	font-display: swap; /* Improves loading performance */
+	font-display: swap;
 }
 body {
-	background-color: black;
+	background-color: rgb(18, 18, 18);
 	padding: 0px 112px;
 }
 .Navbar {

@@ -15,14 +15,15 @@ let started = false;
 let totalchars = 0;
 let accuracy = 100;
 let wpm = 0;
-let personalBest = 0;
+let personalBest = window.localStorage.getItem("personalBest") || 0;
+console.log(personalBest);
 document.addEventListener("keydown", handleKeypress);
 document.addEventListener("DOMContentLoaded", async function () {
 	const res = await fetch("./data.json");
 	data = await res.json();
 	difficulty = "easy";
 	mode = "timed";
-	document.getElementById("personal-best").innerText = personalBest;
+	document.getElementById("personal-best").innerText = Math.round(personalBest);
 	displayText("easy", "timed");
 });
 function changeMode(e) {
@@ -92,7 +93,6 @@ function handleKeypress(e) {
 	if (!started) {
 		handleTimers(mode);
 	}
-	totalchars++;
 	const spans = document.querySelectorAll(".char");
 	if (e.key == "Backspace") {
 		if (charIndex > 0) {
@@ -107,6 +107,7 @@ function handleKeypress(e) {
 	if (e.key.length > 1) {
 		return;
 	}
+	totalchars++;
 	if (spans[charIndex].innerText === e.key) {
 		spans[charIndex].classList.add("correct");
 	} else {
@@ -115,6 +116,7 @@ function handleKeypress(e) {
 	}
 	spans[charIndex].classList.remove("active");
 	charIndex++;
+	console.log(charIndex + " " + spans.length);
 	if (charIndex >= spans.length) {
 		endGame();
 	} else {
@@ -124,6 +126,16 @@ function handleKeypress(e) {
 	document.getElementById("accuracy").innerText = accuracy.toFixed(2);
 }
 function endGame() {
+	clearInterval(timeLeftInterval);
+	clearInterval(timerInterval);
+	if (wpm > personalBest) {
+		console.log("added");
+		window.localStorage.setItem("personalBest", wpm);
+	}
+	window.localStorage.setItem("wpm", wpm);
+	window.localStorage.setItem("accuracy", accuracy);
+	window.localStorage.setItem("totalchars", totalchars);
+	window.localStorage.setItem("mistakes", mistakes);
 	window.location.href = "results.html";
 }
 function restart() {

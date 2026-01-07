@@ -1,11 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results</title>
-</head>
-<body>
-    Here are your results
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="reuslts.css" />
+		<title>Results</title>
+	</head>
+	<body>
+		<header class="header">
+			<div class="logo">
+				<img src="./assets/images/logo-large.svg" alt="logo" />
+			</div>
+			<div class="personal-best">
+				<img src="./assets/images/icon-personal-best.svg" alt="personal best" />
+				<p class="grey">
+					Personal Best:
+					<span class="white"><output id="personal-best"></output>&nbsp;WPM</span>
+				</p>
+			</div>
+		</header>
+		<main>
+			<div class="icon">
+				<img src="./assets/images/icon-completed.svg" alt="Completed Test" />
+			</div>
+			<div class="display-text">
+				<h1>Test Complete!</h1>
+				<p>Solid run keep pushing to beat your high score</p>
+			</div>
+			<div class="stats">
+				<div class="grid">
+					<div class="container">
+						<h2 class="headings">WPM:</h2>
+						<output id="wpm" class="wpm"></output>
+					</div>
+					<div class="container">
+						<h2 class="headings">Accuracy:</h2>
+						<span class="accuracy"><output id="accuracy"></output>%</span>
+					</div>
+					<div class="container">
+						<h2 class="headings">Characters</h2>
+						<span class="characters">
+							<output id="total-chars"></output>
+							/
+							<output id="mistakes"></output>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="actions">
+				<button class="btn" id="btn">Go Again <img src="./assets/images/restart-black.png" alt="restart" /></button>
+			</div>
+		</main>
+		<script src="results.js" type="module"></script>
+	</body>
 </html>
