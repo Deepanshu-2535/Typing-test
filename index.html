@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<title>Typing test</title>
+		<link rel="stylesheet" href="index.css" />
+	</head>
+	<body>
+		<div class="Navbar">
+			<img src="./assets/images/logo-large.svg" />
+			<div id="personal-best-div">
+				<img src="./assets/images/icon-personal-best.svg" />
+				<span class="Titles">Personal Best:</span>
+				<span id="personal-best" class="content"></span>
+				<span class="Content">&nbsp WPM</span>
+			</div>
+		</div>
+		<div class="main">
+			<div id="header">
+				<div id="stats">
+					<span class="Titles"
+						>WPM:
+						<span id="wpm"></span>
+					</span>
+					<div class="divider"></div>
+					<span class="Titles"
+						>Accuracy:
+						<span id="accuracy" class="accuracy"></span>
+						<span class="accuracy">%</span>
+					</span>
+					<div class="divider"></div>
+					<span class="Titles"
+						>Time:
+						<span id="time" class="time"></span>
+						<span class="time">s</span>
+					</span>
+				</div>
+				<div class="controls">
+					<span class="Titles">Difficulty:</span>
+					<span class="radiobutton">
+						<input type="radio" value="easy" id="Easy" name="Difficulty" onchange="changeDifficulty(event)" checked />
+						<label for="Easy" class="label">Easy</label>
+						<input type="radio" value="medium" id="Medium" name="Difficulty" onchange="changeDifficulty(event)" />
+						<label for="Medium" class="label">Medium</label>
+						<input type="radio" value="hard" id="Hard" name="Difficulty" onchange="changeDifficulty(event)" />
+						<label for="Hard" class="label">Hard</label>
+					</span>
+					<div class="divider"></div>
+					<span class="Titles">Mode:</span>
+					<span class="radiobutton">
+						<input type="radio" value="timed" id="Timed" name="Mode" checked onchange="changeMode(event)" />
+						<label for="Timed" class="label">Timed(60s)</label>
+						<input type="radio" value="passage" id="Passage" name="Mode" onchange="changeMode(event)" />
+						<label for="Passage" class="label">Passage</label>
+					</span>
+				</div>
+			</div>
+			<div id="text"></div>
+			<div id="action">
+				<button class="button" onclick="restart()">
+					<span id="button-text">Restart Test</span> <img src="./assets/images/icon-restart.svg" />
+				</button>
+			</div>
+		</div>
+		<script type="module" src="./index.js"></script>
+	</body>
+</html>
