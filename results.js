@@ -7,5 +7,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 const button = document.getElementById("btn");
 button.addEventListener("click", () => {
-	window.location.href = "home.html";
+	window.location.href = "index.html";
 });
